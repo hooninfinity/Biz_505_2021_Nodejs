@@ -10,3 +10,19 @@ USE nodeDB;
 DESC tbl_bbs;
 DROP TABLE tbl_bbs;
 DESC tbl_bbs;
+SELECT * FROM tbl_bbs;
+
+
+USE nodedb;
+DESC tbl_replies;
+
+DROP TABLE tbl_replies;
+DROP TABLE tbl_bbs;
+
+SELECT * FROM tbl_replies;
+
+
+
+
+
+
