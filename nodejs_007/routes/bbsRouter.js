@@ -36,8 +36,8 @@ router.get("/detail", (req, res) => {
   // });
 
   // tbl_bbs에서 b_id 칼럼값으로 데이터를 1개 SELECT 하고
-  // tbl_reply의 r_postId = b_id 로 WHERE 를 실행하여
-  // tbl_reply를 SELECT하고 그 list를 함께 묶어서 결과로 달라
+  // tbl_replay의 r_postId = b_id 로 WHERE 를 실행하여
+  // tbl_replay를 SELECT하고 그 list를 함께 묶어서 결과로 달라
   tbl_bbs
     .findOne({
       where: { b_id },
@@ -67,9 +67,9 @@ router.get("/update", (req, res) => {
 
   // PK 또는 일반 칼럼에 조건을 주어 1개의 데이터를
   // SELECT 할때
-  //   tbl_bbs.findOne({
-  //     where: { b_id },
-  //   });
+  // tbl_bbs.findOne({
+  //  where: { b_id },
+  // });
 
   tbl_bbs.findByPk(b_id).then((result) => {
     res.render("write", { BBS: result });
@@ -80,12 +80,9 @@ router.post("/update", (req, res) => {
   const b_id = req.query.b_id;
 
   req.body.b_id = b_id;
-  tbl_bbs
-    .update(req.body, { where: { b_id } })
-
-    .then((result) => {
-      res.redirect("/");
-    });
+  tbl_bbs.update(req.body, { where: { b_id } }).then((result) => {
+    res.redirect("/");
+  });
 });
 
 router.post("/reply", (req, res) => {
@@ -97,7 +94,7 @@ router.post("/reply", (req, res) => {
 /**
  * HTML에서 서버로 데이터를 보낼때 받는 방법
  *
- * 1. queryString(예전방식)
+ * 1. queryString
  * http://localhost:3000/bbs/detail?b_id=3 이렇게 보낼때
  * req.query.b_id 로 받기
  * const b_id = req.query.b_id
@@ -106,8 +103,9 @@ router.post("/reply", (req, res) => {
  * form의 POST로 전송할때
  * req.body.b_title, 등등으로 받기
  * const b_title = req.body.b_title
- * 이렇게 받은 데이터를 sequelize를 사용하여 DB에 insert, update할때
- * table.create( req.body ), table.update(req.body,{b_id})
+ * 이렇게 받은 데이터를 sequelize를 사용하여 DB에
+ * insert, update
+ * table.create( req.body), table.update(req.body,{b_id})
  *
  * 3. pathVarriable
  * http://localhost:3000/bbs/reply/delete/3 이렇게 보낼때
@@ -115,8 +113,8 @@ router.post("/reply", (req, res) => {
  * router.get("/reply/delete/:rid") 로 URL path를 설정하고
  * req.params.rid로 데이터를 받는다
  * const rid = req.params.rid 와 같이 받는다
- *
  */
+
 router.get("/reply/delete/:rid", (req, res) => {
   const rid = req.params.rid;
 

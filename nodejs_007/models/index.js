@@ -5,13 +5,14 @@ const path = require("path");
 const Sequelize = require("sequelize");
 const basename = path.basename(__filename);
 
-// 현재 프로젝트에 별다른 설정이 없기 때문에
+// 현재 프로젝트에 별다른 설정이 없기때문에
 // env 변수에는 development 문자열이 담겨 있다
 const env = process.env.NODE_ENV || "development";
 
 // config.json 파일에 설정된 속성중에서
 // development 속성만 추출하여 config 변수에 담기게 된다
 const config = require(__dirname + "/../config/config.json")[env];
+
 const db = {};
 
 let sequelize;
