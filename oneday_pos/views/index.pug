@@ -1,0 +1,28 @@
+extend layout 
+
+block content 
+	h1 김밥나라 매장용 POS
+	table.gimbab
+		tr.gimbab
+			td.gimbab 01
+			td.gimbab 02
+			td.gimbab 03
+			td.gimbab 04
+		tr.gimbab
+			td.gimbab 05
+			td.gimbab 06
+			td.gimbab 07
+			td.gimbab 08
+		tr.gimbab 
+			td.gimbab 09
+			td.gimbab 10
+			td.gimbab 11
+			td.gimbab 12
+	script.
+		document.querySelector("table.gimbab")
+		.addEventListener("click",(e)=>{
+			const td = e.target
+			if(td.tagName === "TD") {
+				document.location.href=`/orders/list?o_table=${o_table}`
+			}
+		})

@@ -1,0 +1,44 @@
+extends layout
+
+block content
+	style 
+
+	h1 상품 주문 리스트
+	div.total
+		div.menu
+			h1 #{o_table}번 테이블
+			div
+				table 
+					tr 
+						th 품목
+						th 단가
+						th 수량 
+						th 금액
+					tr 
+						td= ORDERS.o_pcode
+						td= ORDERS.o_price
+						td= ORDERS.o_count
+						td= ORDERS.o_price * ORDERS.o_count
+					tr 
+						td(colspan="2") 합계
+						td= ORDERS.o_total
+				button.pay 결제하기
+
+		div.list
+			div 
+				button 김밥
+				button 참치김밥
+				button 치즈김밥
+			div 
+				button 라면
+				button 만두라면
+				button 치즈라면
+			div 
+				button 돈까스
+				button 비빔밥
+				button 냉면
+
+	script.
+		document.querySelector("button.pay").addEventListener("click",(e)=>{
+			document.location.href="/order/pay"
+		})
