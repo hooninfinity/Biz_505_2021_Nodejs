@@ -23,6 +23,7 @@ block content
 		.addEventListener("click",(e)=>{
 			const td = e.target
 			if(td.tagName === "TD") {
+				const o_table = td.innerText
 				document.location.href=`/orders/list?o_table=${o_table}`
 			}
 		})

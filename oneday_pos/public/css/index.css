@@ -4,15 +4,28 @@
   padding: 0;
 }
 
-body {
+/* body {
   width: 100vw;
   height: 100vh;
-}
+} */
 
 h1 {
   text-align: center;
   margin: 10px auto;
   padding: 10px;
   background-color: green;
+  color: white;
   width: 70%;
+}
+
+table {
+  width: 70%;
+  border: 1px solid red;
+  margin: 0px auto;
+}
+table td {
+  text-align: center;
+  padding: 20px;
+  background-color: blue;
+  color: white;
 }
