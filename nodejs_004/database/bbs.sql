@@ -37,6 +37,26 @@ VALUES
 ('P0007','콩물국수', 5000),
 ('P0008','캘리포니아롤', 4000),
 ('P0009','김치찌개', 5000),
-('P0010','라면', 3000)
+('P0010','라면', 3000);
+
+SELECT * FROM tbl_products;
+SELECT * FROM tbl_table_orders;
+
+
+-- 2021-09-01 v2
+USE nodeDB;
+DROP TABLE tbl_table_orders;
+DROP TABLE tbl_products;
+
+
+
+
+
+
+
+
+
+
+
 
 
