@@ -13,7 +13,7 @@ block content
 			border:1px solid green;
 			margin:10px;
 			padding:10px;
-			background-color:#ddd;
+			background-color:rgba(30,115,190,0.4);
 			height:90%;
 		}
 		article.order_list {
@@ -34,11 +34,16 @@ block content
 
 		article.product_list div.menu {
 			width:100px;
+			padding:100px 0;
 			margin:5px;
 			border:1px solid red;
 			background-color:#ddd;
 			color:blue;
 			font-weight:bold;
+			cursor:pointer;
+		}
+		article.product_list div.menu h3,p {
+			line-height:center;
 		}
 
 		div.order_list {
@@ -64,6 +69,13 @@ block content
 			font-weight:bold;
 		}
 
+		button {
+			width:100vw;
+			height:5vh;
+			cursor:pointer;
+			font-size:20px;
+		}
+
 	article.order_list(data-table_id= table_id)
 		h1 !{table_id} 번 테이블 주문 리스트
 
@@ -80,7 +92,7 @@ block content
 			left:0;
 			width:100vw;
 			height:100vh;
-			background-color:rgba(0,0,0,0.5);
+			background-color:rgba(0,0,0,0.8);
 			z-index:10;
 			display:flex;
 			flex-flow:column;
@@ -92,7 +104,7 @@ block content
 			font-size:30px;
 			padding:20px;
 		}
-
+		
 		div.close span:hover {
 			border-radius:50%;
 			background-color:#ddd;
@@ -105,13 +117,19 @@ block content
 			align-items:center;
 			color:yellow;
 		}
+		div.message h1, h2 {
+			margin-bottom:10px;
+		}
+		div.message button {
+			width:15vw;
+		}
 
 	div.modal
 		div.close
 			span &times;
 		div.message
-			h1 결제금액 :
+			h1 결제금액 : 
 				span.pay_total
-			h2 결제종류 :
+			h2 결제종류 : 
 				span.pay_qty
 			button.btn_pay_complete 확인
