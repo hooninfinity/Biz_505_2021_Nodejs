@@ -8,7 +8,7 @@ router.get("/", async (req, res, next) => {
   const TABLE_COUNT = 12;
   const tables_layout = [];
 
-  // 1. table_orders에 현재 주문이 있는지 확인하기 위하여 SELECT
+  // 1. table_orders에 현재 주문이 있는지 확인하기 위하여 SELECT(주문이 있는 테이블만 리스트를 만듬)
   /**
    * SELECT to_table_id, count(to_table_id) AS count
    * FROM tbl_table_orders
@@ -30,7 +30,7 @@ router.get("/", async (req, res, next) => {
      * table_order_count의 리스트 중에서 해당하는 데이터가 있을 것이다
      * 그 데이터를 찾아 달라
      */
-    const result = await table_order_count.find((order) => {
+    const result = table_order_count.find((order) => {
       return order.dataValues.to_table_id == index + 1;
     });
 

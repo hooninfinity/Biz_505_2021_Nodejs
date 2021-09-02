@@ -14,6 +14,7 @@ block content
 			width:200px;
 			height:100px;
 			border:1px solid green;
+			border-radius:5px;
 			margin:10px;
 
 			text-align:center;
@@ -32,10 +33,10 @@ block content
 		div.order_yes {
 			background-color: #4a00aa;
 		}
-
+		
 	each table,index in TABLES
 		if(table.order_count > 0)
 			div.table.order_yes(data-table_id= table.id ) !{table.table_name}
 				span ( !{table.order_count} )
-		else 
+		else
 			div.table(data-table_id= table.id ) !{table.table_name}

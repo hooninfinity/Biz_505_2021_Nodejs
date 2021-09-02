@@ -15,7 +15,7 @@ block content
 					th 합계
 					th 삭제
 			tbody
-		.btn_box.pay_box 
+		.btn_box.pay_box
 			button.btn_table_layout 처음으로
 			button.btn_pay_cash 현금결제
 			button.btn_pay_card 카드결제
@@ -59,6 +59,19 @@ block content
 			align-items:center;
 			color:yellow;
 		}
+		div.message h1, h2 {
+			margin-bottom:5px;
+		}
+		div.message button {
+			background-color: blue;
+			color: white;
+			padding: 1rem;
+			margin: 5px;
+			border-radius: 5px;
+		}
+		div.message button:hover {
+			box-shadow: 2px 2px 2px black;
+		}
 
 	div.modal 
 		div.close
@@ -66,7 +79,7 @@ block content
 		div.message
 			h1 결제금액 :
 				span.pay_total
-			h2 결제종류 :
+			h2 결제종류 : 
 				span.pay_qty
 			button.btn_pay_complete 확인	
 
