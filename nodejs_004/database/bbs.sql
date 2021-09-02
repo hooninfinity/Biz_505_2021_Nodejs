@@ -49,6 +49,10 @@ DROP TABLE tbl_table_orders;
 DROP TABLE tbl_products;
 
 
+SELECT to_table_id, count(to_table_id) AS count
+FROM tbl_table_orders
+WHERE to_pay IS NULL
+GROUP BY to_table_id;
 
 
 
