@@ -32,10 +32,26 @@ const exportPassport = () => {
       },
       (userid, password, done) => {
         // Member.js 에 선언된 사용자 리스트를 사용하여 인증하기
-        const findMember = members.filter((member) => {
-          return member.userid === userid && member.password === password;
+        // filter 또는 map 또는 forEach 이중에 택일, filter는 [0] 필요
+        // const findMember = members.filter((member) => {
+        //   return member.userid === userid && member.password === password;
+        // });
+        // if (findMember && findMember.length > 0) {
+        //   return done(null, findMember[0]);
+        // } else {
+        //   return done(null, false, { message: "login Fail" });
+        // }
+        members.map((member) => {
+          if (member.userid === userid && member.password === password) {
+            return done(null, member);
+          }
         });
-        return done(null, findMember);
+        members.forEach((member) => {
+          if (member.userid === userid && member.password === password) {
+            return done(null, member);
+          }
+        });
+        return done(null, false, { message: "login Fail" });
       }
     )
   );
